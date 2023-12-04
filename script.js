@@ -80,3 +80,9 @@ for (let i = 0; i < 39; i++) {
 //     }
 // }
 
+
+
+////////////////// BOOKING PAGE POPUP ///////////////////
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Your ticket is Cancelled!");
+}); 

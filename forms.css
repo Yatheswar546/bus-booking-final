@@ -6,7 +6,8 @@
 .hero{
     height: 100%;
     width: 100%;
-    background: linear-gradient(45deg, #ff1100, pink);
+    background: url('./images/banner/banner3.jpeg');
+    /* background: linear-gradient(45deg, #ff1100, pink); */
     /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../images/banner.png); */
     background-position: center;
     background-size: cover;
