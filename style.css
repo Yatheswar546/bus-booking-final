@@ -1,0 +1,1026 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Noto+Sans:wght@200;300;400&family=Roboto:ital,wght@0,100;0,400;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Hedvig Letters Serif', serif; */
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/************************ NAVBAR SECTION **************************/
+nav.navbar {
+    background: #f1f1f1;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 100;
+}
+
+label.logo a {
+    color: red;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav.navbar ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav.navbar ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav.navbar ul li a {
+    color: #000;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav.navbar ul li i {
+    font-size: 20px;
+    margin-left: -10px;
+    margin-top: 20px;
+}
+
+nav.navbar .dropdown-content {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+nav.navbar .dropdown-content li:hover {
+    background-color: #a53030;
+    width: 97%;
+    border-radius: inherit;
+}
+
+nav.navbar .dropdown-content a:hover {
+    color: #fff;
+}
+
+nav.navbar .dropdown-content #email {
+    border-bottom: #000;
+}
+
+nav.navbar .dropdown-content a {
+    padding: 5px;
+    margin: -10px 0px;
+    display: block;
+
+}
+
+#dropdownBtn:hover .dropdown-content {
+    display: block;
+}
+
+nav.navbar .checkbtn {
+    font-size: 30px;
+    color: #000;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav.navbar ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:858px) {
+    nav.navbar .checkbtn {
+        display: block;
+    }
+
+    nav.navbar ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all.5s;
+    }
+
+    nav.navbar ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav.navbar ul li a {
+        font-size: 20px;
+    }
+
+    nav.navbar a.hover,
+    nav.navbar a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+}
+
+/************************ BANNER SECTION **************************/
+.banner {
+    /* border: 1px solid red; */
+    background: linear-gradient(45deg, #ff1100, pink);
+    height: 450px;
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banner h1 {
+    /* border: 1px solid #000; */
+    color: #000;
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.banner form {
+    /* border: 1px solid #000; */
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 400px;
+}
+
+.banner form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.banner input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.banner form input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+.banner button {
+    background-color: #af4c4c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.banner button a{
+    color: #fff;
+}
+
+.banner button:hover {
+    background-color: rgb(232, 26, 26);
+}
+
+
+.banner .image{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.banner .image img{
+    width: 850px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/************************ BANNER SECTION **************************/
+.trending {
+    /* border: 1px solid red; */
+    padding: 20px;
+    position: relative;
+    top: 80px;
+}
+
+.trending h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.trending .offers {
+    padding: 20px;
+}
+
+.trending .offers img {
+    padding: 20px;
+    margin: 10px 35px;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+}
+
+/************************ REFERRAL SECTION **************************/
+.referral {
+    /* border: 1px solid red; */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+/************************ Partners SECTION **************************/
+.partners {
+    /* border: 1px solid red; */
+    padding: 20px;
+    position: relative;
+    top: 80px;
+}
+
+.partners h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.partners .heading {
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.partners .heading h2 {
+    font-size: 25px;
+}
+
+.partners .heading button {
+    padding: 10px;
+    width: 10%;
+    font-size: 15px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+
+.partners .images {
+    padding: 20px;
+    margin: 18px;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.partners .images div {
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.partners .images img {
+    padding: 18px;
+    width: 150px;
+    height: 150px;
+}
+
+.partners .images div p {
+    text-align: center;
+}
+
+.partners .private-partners .operators {
+    padding: 10px;
+    margin: 30px;
+    display: flex;
+}
+
+.partners .private-partners .operators ul {
+    list-style: none;
+    padding: 0px;
+    margin: 30px;
+}
+
+.partners .private-partners .operators ul li {
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+/************************ Global Presence SECTION **************************/
+.global {
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+.global h1 {
+    font-size: 30px;
+    margin: 20px;
+    margin-left: 100px;
+}
+
+.global .images {
+    padding: 20px;
+    margin: 18px;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.global .images div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.global .images p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.global .images img {
+    padding: 18px;
+    width: 170px;
+    height: 170px;
+}
+
+/************************ BOOK TICKETS ONLINE SECTION **************************/
+.book-tickets {
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+.book-tickets h1 {
+    padding: 20px;
+    margin-left: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.book-tickets .content {
+    margin: 30px;
+}
+
+.book-tickets .content p {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 25px;
+    line-height: 2;
+}
+
+/************************ FAQ SECTION **************************/
+.faq {
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq h1 {
+    padding: 20px;
+    margin-left: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.faq .questions {
+    /* max-width: 000px; */
+    margin: 70px;
+    margin-top: 5px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #000;
+
+}
+
+.faq .questions .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.faq .questions .question h3 {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.faq .questions .question i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.faq .questions .question i.minus {
+    display: none;
+}
+
+.faq .questions .answer {
+    max-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.faq .questions .answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.faq .questions.active .answer {
+    max-height: 300px;
+}
+
+
+/************************ Footer SECTION **************************/
+footer {
+    display: grid;
+    justify-content: end;
+    align-content: end;
+    min-height: 10vh;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background-color: #a53030;
+}
+
+.footer .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.footer .container h3 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.footer .container h3::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: rgb(175, 174, 159);
+}
+
+.footer .about p {
+    color: #fff;
+}
+
+.footer .icons {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 10px;
+}
+
+.footer .icons li a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: rgb(203, 62, 62);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footer .icons li a:hover {
+    background: #fe6363;
+}
+
+.footer .quicklinks {
+    position: relative;
+}
+
+.footer .quicklinks li {
+    list-style: none;
+}
+
+.footer .quicklinks li a {
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.footer .quicklinks li a:hover {
+    color: #8e7373;
+}
+
+.footer .footer-content {
+    position: relative;
+}
+
+.footer .footer-content li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+
+.footer .footer-content li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer .footer-content span {
+    color: #fff;
+}
+
+.footer .footer-content a {
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.footer .footer-content a:hover {
+    color: #ffeb3b;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    background: #891f1f;
+    padding: 8px 100px;
+    color: #fff;
+}
+
+@media(max-width:991px) {
+    .footer {
+        padding: 40px;
+    }
+
+    .footer .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .copyright {
+        padding: 8px 40px;
+    }
+}
+
+@media(max-width:600px) {
+    .footer {
+        padding: 40px;
+    }
+
+    .footer .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .copyright {
+        padding: 8px 40px;
+    }
+}
+
+
+/***************************************************** SEARCH BUSES PAGE ************************************************************/
+/************************ TOP BAR SECTION **************************/
+.top-section {
+    position: relative;
+    top: 80px;
+}
+
+.top-section div {
+    display: flex;
+    align-items: center;
+}
+
+.top-section h6 {
+    margin: 10px;
+    font-size: 12px;
+}
+
+.top-section h3 {
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #6d6b6b;
+}
+
+.top-section h4 {
+    margin: 10px;
+}
+
+.top-section button {
+    padding: 5px;
+    width: 5%;
+    border-radius: 10px;
+}
+
+/************************ MAIN SECTION **************************/
+.main-section {
+    position: relative;
+    top: 80px;
+    display: flex;
+}
+
+/**************** side-menu ***********/
+.side-menu {
+    /* border: 1px solid red; */
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu .sections {
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid rgb(112, 83, 83);
+}
+
+.side-menu .sections .heading {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.side-menu .sections li {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.side-menu .sections li label {
+    display: flex;
+    align-items: center;
+}
+
+.side-menu .sections li input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.side-menu .sections li i {
+    font-size: 12px;
+    float: right;
+}
+
+/**************** container ***********/
+.main-section .container {
+    width: 80vw;
+    height: 100vh;
+    /* border: 1px solid blue; */
+}
+
+.main-section .container .offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section .container .offers img {
+    width: 250px;
+    height: 150px;
+    margin: 30px 40px;
+}
+
+.main-section .container .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-section .container .content div {
+    display: flex;
+    align-items: center;
+}
+
+.main-section .container .content h6 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 2px 10px;
+}
+
+.main-section .container .content p {
+    font-size: 15px;
+    margin: 2px 10px;
+}
+
+.main-section .container .bus-details {
+    border: 1px solid #6d6b6b;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.main-section .container .bus-details .full-specifications {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.main-section .container .bus-details .specifications {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section .container .bus-details .specifications h6,
+p,
+h5 {
+    margin-bottom: 30px;
+}
+
+.main-section .container .bus-details .specifications .rating {
+    color: #fff;
+    background-color: #00d10a;
+    border-radius: 5px;
+}
+
+.main-section .container .bus-details .features {
+    display: flex;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.main-section .container .bus-details .features i {
+    padding: 3px;
+    margin-top: -50px;
+    font-size: 15px;
+}
+
+.main-section .container .bus-details .button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 10px;
+    background-color: red;
+    width: 10%;
+    text-align: center;
+}
+
+.main-section .container .bus-details .button a {
+    color: #fff;
+}
+
+
+/***************************************************** BOOKING PAGE ************************************************************/
+/************************ BOOKING SECTION **************************/
+.booking-section{
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: rgba(238, 229, 229, 0.89);
+}
+
+.booking-section .seats{
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    border-bottom: 1px solid #000;
+}
+
+.booking-section button{
+    margin: 0px 10px;
+    margin-top: -30px;
+    padding: 5px 10px;
+    width: 50px;
+}
+
+.booking-section button.active{
+    background-color: #767171;
+    color: #fff;
+}
+
+.booking-section .seats-selector{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.booking-section .seats-selector .status{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.booking-section .seats-selector .item{
+    font-size: 18px;
+    position: relative;   
+}
+
+.booking-section .seats-selector .item::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    transform: translate(0,-50%);
+    width: 10px;
+    height: 10px;
+    background: rgb(255,255,255);
+    outline: 0.2mm solid rgb(120,120,120);
+    border-radius: 5px;
+}
+
+.booking-section .seats-selector .item:nth-child(2)::before{
+    background: rgb(120,120,120);
+    outline: none;
+}
+
+.booking-section .seats-selector .item:nth-child(3)::before{
+    background: rgb(28,185,120);
+    outline: none;
+}
+
+.booking-section .seats-selector .all-seats{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-gap: 15px;
+    margin: 60px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.booking-section .seats-selector .all-seats .seat{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 5px;
+    outline: 0.3mm solid rgb(180,180,180);
+    cursor: pointer;
+}
+
+.booking-section .seats-selector .all-seats input:checked + label{
+    background: rgb(28,185,120);
+    outline: none;
+}
+
+.booking-section .seats-selector .all-seats .seat.booked{
+    /* background: rgb(180,180,180); */
+    background: rgb(137, 133, 133);
+    outline: none;
+}
+
+.booking-section .seats-selector .all-seats input{
+    display: none;
+}
+
+.booking-section form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-left: 40%;
+}
+
+.booking-section label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.booking-section input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.booking-section input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.booking-section form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.booking-section  form button:hover {
+    background-color: #45a049;
+}
+
+.booking-section  form .buttons{
+    margin-top: 30px;
+    display: flex;
+}
+
+.booking-section  form a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/***************************************************** STATUS PAGE ************************************************************/
+/************************Confirm Ticket Section **************************/
+.confirm-ticket{
+    position: relative;
+    top: 80px;
+    /* border: 1px solid red; */
+}
+
+.confirm-ticket .ticket{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 30px;
+    margin: 30px 0px;
+    background: #fff;
+    /* background: linear-gradient(45deg, #d44a40, rgb(185, 64, 84)); */
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.confirm-ticket .ticket .heading{
+    text-align: center;
+    padding: 15px;
+    color: #38e440;
+    font-size: 35px;
+}
+
+.confirm-ticket .ticket .details{
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.confirm-ticket .ticket .details h1{
+    padding: 5px;
+}
+
+.confirm-ticket .ticket .details h1.journey{
+    color: red;
+}
+
+.confirm-ticket .ticket .details h1.price{
+    font-size: 25px;
+    color: red;
+}

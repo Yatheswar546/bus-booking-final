@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tickets</title>
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Box Icons Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <!---------------------------- NAVBAR SECTION ----------------------->
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </label>
+        <label class="logo"><a href="./index.html">Bus Tickets</a></label>
+        <ul>
+            <li><a href="#">Bus Tickets</a></li>
+            <li><a href="#">Cab Rental</a></li>
+            <li><a href="#">Train Tickets</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Help</a></li>
+            <li id="dropdownBtn"><a href="#">Account</a><i class='bx bx-chevron-down icon'></i>
+                <ul class="dropdown-content" id="dropdownContent">
+                    <li><a href="#">Cancel Ticket</a></li>
+                    <li><a href="#">Cancel Travel Date</a></li>
+                    <li><a href="#">Show My Ticket</a></li>
+                    <li><a href="#" id="email">Email/SMS</a></li>
+                    <li><a href="./forms.html">Login/Sign Up</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------------------- TOP BAR SECTION --------------->
+    <div class="top-section">
+        <div>
+            <h6>Home</h6>
+            <i class='bx bx-chevron-right'></i>
+            <h6>Bus Tickets</h6>
+            <i class='bx bx-chevron-right'></i>
+            <h6>Visakhapatnam to Hyderabad Bus</h6>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+
+        <h3>Visakhapatnam to Hyderabad Bus</h3>
+
+        <div style="border-bottom: 1px solid #6d6b6b;">
+            <h4>Visakhapatnam</h4>
+            <i class='bx bx-right-arrow-alt'></i>
+            <h4>Hyderabad</h4>
+            <i class='bx bx-chevron-left'></i>
+            <h4>4 Dec Mon</h4>
+            <i class='bx bx-chevron-right'></i>
+            <button>Modify</button>
+        </div>
+    </div>
+
+    <!-------------------- MAIN SECTION --------------->
+    <div class="main-section">
+        <!---- SIDE MENU ---->
+        <div class="side-menu">
+            <div class="sections">
+                <h3 class="heading">FILTERS</h3>
+                <ul>
+                    <li>Live Tracking(63) <i class="fa-solid fa-check"></i></li>
+                    <li>Primo Bus(5) <i class="fa-solid fa-check"></i></li>
+                </ul>
+            </div>
+            <div class="sections">
+                <h3 class="heading">DEPARTURE TIME</h3>
+                <ul>
+                    <li><label><input type="checkbox">Before 6am (0)</label></li>
+                    <li><label><input type="checkbox">6am to 12pm (0)</label></li>
+                    <li><label><input type="checkbox">12pm to 6pm (23)</label></li>
+                    <li><label><input type="checkbox">After 6pm (48)</label></li>
+                </ul>
+            </div>
+            <div class="sections">
+                <h3 class="heading">BUS TYPES</h3>
+                <ul>
+                    <li><label><input type="checkbox">SEATER (50)</label></li>
+                    <li><label><input type="checkbox">SLEEPER (65)</label></li>
+                    <li><label><input type="checkbox">AC (46)</label></li>
+                    <li><label><input type="checkbox">NONAC (25)</label></li>
+                </ul>
+            </div>
+            <div class="sections">
+                <h3 class="heading">SEAT AVAILABILITY</h3>
+                <ul>
+                    <li><label><input type="checkbox">Single Seats (47)</label></li>
+                </ul>
+            </div>
+            <div class="sections">
+                <h3 class="heading">ARRIVAL TIME</h3>
+                <ul>
+                    <li><label><input type="checkbox">Before 6am (6)</label></li>
+                    <li><label><input type="checkbox">6am to 12pm (65)</label></li>
+                    <li><label><input type="checkbox">12pm to 6pm (0)</label></li>
+                    <li><label><input type="checkbox">After 6pm (0)</label></li>
+                </ul>
+            </div>
+        </div>
+
+        <!---- CONTAINER ---->
+        <div class="container">
+            <!----- BOOKING-SECTION ------>
+            <div class="booking-section">
+                <div class="seats">
+                    <p><b>Seat Price</b></p>
+                    <button class="active">All</button>
+                    <button>1720</button>
+                    <button>1941</button>
+                    <button>2624</button>
+                </div>
+                <div class="seats-selector">
+                    <div class="status">
+                        <div class="item">Available</div>
+                        <div class="item">Booked</div>
+                        <div class="item">Selected</div>
+                    </div>
+                    <div class="all-seats">
+                        <input type="checkbox" name="tickets" id="s1">
+                        <label for="s1" class="seat"></label>
+                    </div>
+                </div>
+
+                <form>
+                    <label for="pickup">Boarding Point:</label>
+                    <input type="text" id="pickup" name="pickup" required>
+
+                    <label for="drop">Dropping Point:</label>
+                    <input type="text" id="drop" name="drop" required>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+
+                    <label for="city">City of Residence:</label>
+                    <input type="text" id="city" name="city" required>
+
+                    <label for="state">State of Residence:</label>
+                    <input type="text" id="state" name="state" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <p style="text-align: center;"><b>Total Amount: $120.0</b></p>
+
+                    <label style="display: flex;">
+                        <input type="checkbox" id="terms" name="terms" required style="width: 15px;">
+                        I have read all terms & conditions
+                    </label>
+
+                    <div class="buttons">
+                        <button type="submit" style="background-color: red;">Cancel</button>
+                        <button type="submit"><a href="./status-page.html">Proceed</a></button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Custom Js Script -->
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>
