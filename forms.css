@@ -3,12 +3,10 @@
     padding: 0;
     font-family: sans-serif;
 }
-.hero{
+.main{
     height: 100%;
     width: 100%;
     background: url('./images/banner/banner3.jpeg');
-    /* background: linear-gradient(45deg, #ff1100, pink); */
-    /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../images/banner.png); */
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -21,6 +19,7 @@
     background: #fff;
     padding: 5px;
     overflow: hidden;
+    border-radius: 50px;
 }
 .button-box{
     width: 220px;
@@ -48,10 +47,13 @@
     transition: .5s;
 }
 .input-group{
-    top: 180px;
+    top: 150px;
     position: absolute;
     width: 280px;
     transition: .5s;
+}
+.input-group.register-form{
+    top: 120px;
 }
 .input-field{
     width: 100%;
@@ -81,7 +83,7 @@
 span{
     color: #777;
     font-size: 12px;
-    bottom: 68px;
+    bottom: 84px;
     position: absolute;
 }
 #login{
@@ -94,4 +96,22 @@ span{
 a{
     text-decoration: none;
     color: #fff;
+}
+
+.back-to-home{
+    font-size: 15px;
+    color: #000;
+    margin-left: 90px;
+}
+
+.message{
+    width: 95%;
+    padding: 7px;
+    margin-bottom: 5px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    font-weight: bolder;
+    position: absolute;
+    top: 80px;
 }

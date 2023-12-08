@@ -1,15 +1,22 @@
+///////////////// DROPDOWNS IN NAVBAR ///////////////////////////// 
+var HelpdropdownBtn = document.getElementById("HelpdropdownBtn");
+var HelpdropdownContent = document.getElementById("HelpdropdownContent");
+HelpdropdownBtn.addEventListener("click", function () {
+    // console.log("Hello");
+    HelpdropdownContent.classList.toggle("active");
+});
 
-var dropdownBtn = document.getElementById("dropdownBtn");
-var dropdownContent = document.getElementById("dropdownContent");
-dropdownBtn.addEventListener("click", function () {
-    console.log("Hello");
-    dropdownContent.classList.toggle("active");
+var AccountdropdownBtn = document.getElementById("AccountdropdownBtn");
+var AccountdropdownContent = document.getElementById("AccountdropdownContent");
+AccountdropdownBtn.addEventListener("click", function () {
+    // console.log("Hello");
+    AccountdropdownContent.classList.toggle("active");
 });
 
 // Close the dropdown if the user clicks outside of it
 window.addEventListener("click", function (event) {
-    if (!event.target.matches("#dropdownBtn")) {
-        var dropdown = document.getElementById("dropdownContent");
+    if (!event.target.matches("#AccountdropdownBtn")) {
+        var dropdown = document.getElementById("AccountdropdownContent");
         if (dropdown.classList.contains("show")) {
             dropdown.classList.remove("show");
         }
@@ -26,63 +33,62 @@ faqs.forEach(faq => {
     });
 });
 
-// const minuses = document.querySelectorAll('.minus');
 
-// minuses.forEach(minus => {
-//     minus.addEventListener('click', () =>{
-//         minus.classList.toggle("active");
-//     });
-// });
+//////////////////// BOOKING SECTION No. Of Seats, Seats Selector & Fare ///////////////////////////
 
+let selectedSeats = [];
 
-//////////////////// BOOKING SECTION ///////////////////////////
-// let seats = document.querySelector(".all-seats");
-// for (var i = 0; i < 59; i++) {
-//     let randint = Math.floor(Math.random() * 2)
-//     let booked = randint === 1 ? "booked" : "";
-//     seats.insertAdjacentHTML("beforeend", '<input type="checkbox" name="tickets" id="s' + (i + 2) + '"><label for="s' + (i+2) +'" class="seat' + booked + '"></label>');
-// }
+function updateCountAndPrice() {
+    let countElement = document.getElementById("count");
+    countElement.textContent = "Count: " + selectedSeats.length;
 
+    // Update total price based on the number of selected seats
+    let totalPrice = selectedSeats.length * 50; // Assuming $50 per seat
+    let priceElement = document.getElementById("price");
+    priceElement.textContent = "Total Price: $" + totalPrice;
+
+    // Update the hidden input field with the calculated price
+    let total_price_input = document.getElementById("total_price");
+    total_price_input.value = totalPrice;
+}
 
 let seatsContainer = document.querySelector(".all-seats");
 
-// const rows = 4;
-// const seatsPerRow = 10;
-
-// for (let row = 0; row < rows; row++) {
-//     for (let seat = 0; seat < seatsPerRow; seat++) {
-//         let isBooked = Math.random() < 0.5; // Adjust the probability as needed
-//         let bookedClass = isBooked ? "booked" : "";
-
-//         seatsContainer.insertAdjacentHTML("beforeend", '<input type="checkbox" name="tickets" id="s' + (row * seatsPerRow + seat + 1) + '"><label for="s' + (row * seatsPerRow + seat + 1) + '" class="seat ' + bookedClass + '"></label>');
-//     }
-
-//     if (row < rows - 1) {
-//         // Insert the repetition gap after each row except the last one
-//         seatsContainer.insertAdjacentHTML("beforeend", '<div class="repetition-gap"></div>');
-//     }
-// }
-
+// Generate checkboxes
 for (let i = 0; i < 39; i++) {
     let isBooked = Math.random() < 0.5; // Adjust the probability as needed
     let bookedClass = isBooked ? "booked" : "";
-    
+
     seatsContainer.insertAdjacentHTML("beforeend", '<input type="checkbox" name="tickets" id="s' + (i + 2) + '"><label for="s' + (i + 2) + '" class="seat ' + bookedClass + '"></label>');
 }
 
+// Add event listener for checkbox changes
+seatsContainer.addEventListener("change", function (event) {
+    if (event.target.type === "checkbox" && event.target.name === "tickets") {
+        let selectedSeatId = event.target.id;
 
-// for (let repeat = 0; repeat < 2; repeat++) {
-//     for (let i = 0; i < 59; i++) {
-//         let isBooked = Math.random() < 0.5; // Adjust the probability as needed
-//         let bookedClass = isBooked ? "booked" : "";
+        // Toggle the selected seat in the array
+        let index = selectedSeats.indexOf(selectedSeatId);
+        if (index === -1) {
+            selectedSeats.push(selectedSeatId);
+        } else {
+            selectedSeats.splice(index, 1);
+        }
 
-//         seatsContainer.insertAdjacentHTML("beforeend", '<input type="checkbox" name="tickets" id="s' + (i + 2) + '"><label for="s' + (i + 2) + '" class="seat ' + bookedClass + '"></label>');
-//     }
-// }
-
+        // Update count and total price
+        updateCountAndPrice();
+    }
+});
 
 
 ////////////////// BOOKING PAGE POPUP ///////////////////
-document.getElementById("myButton").addEventListener("click", function() {
-    alert("Your ticket is Cancelled!");
-}); 
+function cancelPayment(){
+    alert('Your ticket is Cancelled!');
+    location.reload(); 
+}
+
+
+function Payment(){
+    alert('Your Payment is Successful !!!');
+    return true;
+}

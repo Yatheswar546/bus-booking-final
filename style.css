@@ -22,9 +22,9 @@ nav.navbar {
     background: #f1f1f1;
     height: 80px;
     width: 100%;
+    position: fixed;
     display: flex;
     justify-content: space-around;
-    position: fixed;
     z-index: 100;
 }
 
@@ -62,7 +62,6 @@ nav.navbar ul li i {
 }
 
 nav.navbar .dropdown-content {
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     display: none;
@@ -90,10 +89,14 @@ nav.navbar .dropdown-content a {
     padding: 5px;
     margin: -10px 0px;
     display: block;
-
+    font-size: 15px;
 }
 
-#dropdownBtn:hover .dropdown-content {
+#AccountdropdownBtn:hover .account-dropdown-content {
+    display: block;
+}
+
+#HelpdropdownBtn:hover .help-dropdown-content {
     display: block;
 }
 
@@ -102,7 +105,6 @@ nav.navbar .checkbtn {
     color: #000;
     float: right;
     line-height: 80px;
-    margin-right: 40px;
     cursor: pointer;
     display: none;
 }
@@ -111,11 +113,18 @@ nav.navbar .checkbtn {
     display: none;
 }
 
+nav.navbar ul li a.logout{
+    color: red;
+}
+
+.logout:hover{
+    color: #fff;
+}
+
 @media (max-width:952px) {
     label.logo {
         font-size: 30px;
-        padding-left: 50px;
-    }
+    }   
 
     nav.navbar ul li a {
         font-size: 16px;
@@ -131,7 +140,7 @@ nav.navbar .checkbtn {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #2c3e50;
+        background: #e0e6ec;
         top: 80px;
         left: -100%;
         text-align: center;
@@ -158,11 +167,19 @@ nav.navbar .checkbtn {
         left: 0;
     }
 
+    label.logo {
+        margin-left: -310px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    label.logo {
+        margin-left: -50px;
+    }
 }
 
 /************************ BANNER SECTION **************************/
 .banner {
-    /* border: 1px solid red; */
     background: linear-gradient(45deg, #ff1100, pink);
     height: 450px;
     position: relative;
@@ -172,7 +189,6 @@ nav.navbar .checkbtn {
 }
 
 .banner h1 {
-    /* border: 1px solid #000; */
     color: #000;
     position: absolute;
     top: 30%;
@@ -182,7 +198,6 @@ nav.navbar .checkbtn {
 }
 
 .banner form {
-    /* border: 1px solid #000; */
     position: absolute;
     top: 50%;
     left: 20%;
@@ -190,10 +205,7 @@ nav.navbar .checkbtn {
     display: flex;
     flex-direction: column;
     width: 380px;
-    height: 400px;
-}
-
-.banner form {
+    height: 350px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -205,6 +217,7 @@ nav.navbar .checkbtn {
     margin-bottom: 8px;
 }
 
+.banner select,
 .banner input {
     width: 100%;
     padding: 10px;
@@ -254,120 +267,83 @@ nav.navbar .checkbtn {
     border-radius: 8px;
 }
 
-/************************ BANNER SECTION **************************/
-.trending {
-    /* border: 1px solid red; */
-    padding: 20px;
-    position: relative;
-    top: 80px;
+@media (max-width: 1260px){
+    .banner .image img{
+        width: 710px;
+    }
 }
 
-.trending h1 {
-    text-align: center;
+@media (max-width: 1260px){
+    .banner .image img{
+        width: 620px;
+    }
+}
+
+@media (max-width: 820px){
+    .banner .image img{
+        width: 375px;
+    }
+
+    .banner form{
+        width: 318px;
+    }
+}
+
+@media (max-width: 820px){
+    .banner .image img{
+        display: none;
+    }
+
+    .banner form{
+        width: 380px;
+        left: 50%;
+    }
+}
+
+/************************ Gallery SECTION **************************/
+.gallery {
+    padding: 20px;
+    position: relative;
+    top: 70px;
+}
+
+.gallery h1 {
     font-size: 30px;
-}
-
-.trending .offers {
-    padding: 20px;
-}
-
-.trending .offers img {
-    padding: 20px;
-    margin: 10px 35px;
-    border-radius: 10px;
-    /* border: 1px solid red; */
-}
-
-/************************ REFERRAL SECTION **************************/
-.referral {
-    /* border: 1px solid red; */
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    top: 80px;
-}
-
-/************************ Partners SECTION **************************/
-.partners {
-    /* border: 1px solid red; */
-    padding: 20px;
-    position: relative;
-    top: 80px;
-}
-
-.partners h1 {
-    text-align: center;
-    font-size: 30px;
-}
-
-.partners .heading {
-    padding: 20px;
     margin: 20px;
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: space-around;
+    margin-left: 100px;
 }
 
-.partners .heading h2 {
-    font-size: 25px;
-}
-
-.partners .heading button {
-    padding: 10px;
-    width: 10%;
-    font-size: 15px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 10px;
-}
-
-.partners .images {
+.gallery .images {
     padding: 20px;
     margin: 18px;
     margin-top: 0px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.partners .images div {
-    /* border: 1px solid #000; */
+.gallery .images div {
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
-.partners .images img {
-    padding: 18px;
-    width: 150px;
-    height: 150px;
-}
-
-.partners .images div p {
+.gallery .images p {
     text-align: center;
+    font-size: 18px;
 }
 
-.partners .private-partners .operators {
-    padding: 10px;
-    margin: 30px;
-    display: flex;
-}
-
-.partners .private-partners .operators ul {
-    list-style: none;
-    padding: 0px;
-    margin: 30px;
-}
-
-.partners .private-partners .operators ul li {
-    font-size: 20px;
-    margin: 10px;
-    margin-bottom: 30px;
+.gallery .images img {
+    padding: 18px;
+    width: 420px;
+    height: 280px;
 }
 
 /************************ Global Presence SECTION **************************/
 .global {
-    /* border: 1px solid red; */
     padding: 20px;
+    position: relative;
+    top: 50px;
 }
 
 .global h1 {
@@ -404,7 +380,6 @@ nav.navbar .checkbtn {
 
 /************************ BOOK TICKETS ONLINE SECTION **************************/
 .book-tickets {
-    /* border: 1px solid red; */
     padding: 20px;
 }
 
@@ -428,7 +403,6 @@ nav.navbar .checkbtn {
 
 /************************ FAQ SECTION **************************/
 .faq {
-    /* border: 1px solid red; */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -442,7 +416,6 @@ nav.navbar .checkbtn {
 }
 
 .faq .questions {
-    /* max-width: 000px; */
     margin: 70px;
     margin-top: 5px;
     padding-bottom: 1rem;
@@ -638,7 +611,7 @@ footer {
 }
 
 
-/***************************************************** SEARCH BUSES PAGE ************************************************************/
+/****************************************** SEARCH BUSES PAGE ******************************************/
 /************************ TOP BAR SECTION **************************/
 .top-section {
     position: relative;
@@ -671,6 +644,19 @@ footer {
     border-radius: 10px;
 }
 
+@media(max-width: 850px){
+    .top-section button {
+        width: 8%;
+    }
+}
+
+@media(max-width: 600px){
+    .top-section button {
+        width: 15%;
+    }
+}
+
+
 /************************ MAIN SECTION **************************/
 .main-section {
     position: relative;
@@ -680,67 +666,30 @@ footer {
 
 /**************** side-menu ***********/
 .side-menu {
-    /* border: 1px solid red; */
     width: 20vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.side-menu .sections {
-    padding: 10px;
-    margin: 10px;
-    border-bottom: 1px solid rgb(112, 83, 83);
-}
-
-.side-menu .sections .heading {
-    padding: 10px;
-    font-size: 15px;
-}
-
-.side-menu .sections li {
-    margin-left: 10px;
-    padding: 10px;
-    font-size: 12px;
-}
-
-.side-menu .sections li label {
-    display: flex;
-    align-items: center;
-}
-
-.side-menu .sections li input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.side-menu .sections li i {
-    font-size: 12px;
-    float: right;
+@media screen and (max-width: 850px) {
+    .side-menu{
+        display: none;
+    }
 }
 
 /**************** container ***********/
 .main-section .container {
     width: 80vw;
     height: 100vh;
-    /* border: 1px solid blue; */
-}
-
-.main-section .container .offers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-section .container .offers img {
-    width: 250px;
-    height: 150px;
-    margin: 30px 40px;
 }
 
 .main-section .container .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 30px;
 }
 
 .main-section .container .content div {
@@ -819,17 +768,23 @@ h5 {
     color: #fff;
 }
 
+@media screen and (max-width: 850px) {
+    .main-section .container{
+        width: 100%;
+        padding: 30px;
+    }
+}
 
-/***************************************************** BOOKING PAGE ************************************************************/
+/***************************************** BOOKING PAGE *********************************************/
 /************************ BOOKING SECTION **************************/
 .booking-section{
     padding: 20px;
     border: 1px solid #000;
-    /* background: url('./images/banner/banner2.jpeg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
     background-color: rgba(238, 229, 229, 0.89);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .booking-section .seats{
@@ -923,7 +878,6 @@ h5 {
 }
 
 .booking-section .seats-selector .all-seats .seat.booked{
-    /* background: rgb(180,180,180); */
     background: rgb(137, 133, 133);
     outline: none;
 }
@@ -938,7 +892,6 @@ h5 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin-left: 40%;
 }
 
 .booking-section label {
@@ -984,12 +937,11 @@ h5 {
 }
 
 
-/***************************************************** STATUS PAGE ************************************************************/
+/*********************************** STATUS PAGE **************************************/
 /************************Confirm Ticket Section **************************/
 .confirm-ticket{
     position: relative;
     top: 80px;
-    /* border: 1px solid red; */
 }
 
 .confirm-ticket .ticket{
@@ -1041,4 +993,14 @@ h5 {
 
 .confirm-ticket .ticket .details button:hover{
     background-color: #00d10a;
+}
+
+@media screen and (max-width: 650px) {
+    .confirm-ticket .ticket{
+        width: 90%;
+    }
+
+    .confirm-ticket .ticket .details{
+        margin-left: -30px;
+    }
 }
